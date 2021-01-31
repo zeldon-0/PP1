@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "5wh2AYcF61SneAKqKOxbNFmyrmCsS9B+fN7APBK9ZaEEdToI/m9z94MzCIpHfInJLw/jEAdyAwkmeyXZ5FeIJg==",
+  "success": true,
+  "projectFilePath": "E:\\PP\\PP1.ServiceLayer\\PP1.ServiceLayer\\PP1.ServiceLayer.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Vadym\\.nuget\\packages\\autofac\\6.1.0\\autofac.6.1.0.nupkg.sha512",
+    "C:\\Users\\Vadym\\.nuget\\packages\\autofac.extensions.dependencyinjection\\7.1.0\\autofac.extensions.dependencyinjection.7.1.0.nupkg.sha512",
+    "C:\\Users\\Vadym\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\2.1.0\\microsoft.extensions.dependencyinjection.abstractions.2.1.0.nupkg.sha512",
+    "C:\\Users\\Vadym\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.7.1\\system.diagnostics.diagnosticsource.4.7.1.nupkg.sha512"
+  ],
+  "logs": []
+}
