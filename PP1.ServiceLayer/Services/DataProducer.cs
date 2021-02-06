@@ -8,25 +8,20 @@ namespace PP1.ServiceLayer.Services
 {
     public class DataProducer : IDataProducer
     {
-        private int _currentIndex;
-        private List<int> _values;
+        private Queue<MessageModel> _queue;
         public DataProducer()
         {
-            _currentIndex = 0;
-            _values = Enumerable.Range(0, 10).ToList();
+            _queue = new Queue<MessageModel>();
+            _queue.Enqueue(new MessageModel
+            {
+                Id = 1,
+                Data = 1
+            });
         }
 
         public MessageModel Produce()
         {
-            if (_currentIndex == _values.Count)
-            {
-                return null;
-            }
-            var currentMessage = new MessageModel
-            {
-                Data = _values[_currentIndex]
-            };
-            _currentIndex++;
+            var currentMessage = _queue.Dequeue();
             return currentMessage;
         }
     }

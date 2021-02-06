@@ -8,59 +8,33 @@ using Autofac;
 using Microsoft.Extensions.Options;
 using PP1.ServiceLayer.Infrastructure;
 using PP1.ServiceLayer.Services;
+using PP2.ServiceLayer.DataLayer.Contracts;
 using CancellationToken = System.Threading.CancellationToken;
 
 namespace PP1.ServiceLayer.BackgroundServices
 {
     public class ConsumerService : BackgroundService
     {
-        private readonly ILifetimeScope _lifetimeScope;
-        private ConsumerConfig _consumerConfig;
+       // private readonly IDataProducer _dataProducer;
+        private readonly IMessageRepo _messageRepo;
 
-        public ConsumerService(
-            ILifetimeScope lifetimeScope,
-            IOptions<ConsumerConfig> consumerConfig)
+        public ConsumerService(//IDataProducer dataProducer, 
+            IMessageRepo messageRepo
+        )
         {
-            _lifetimeScope = lifetimeScope;
-            _consumerConfig = consumerConfig.Value;
+           // _dataProducer = dataProducer;
+            _messageRepo = messageRepo;
         }
         protected override Task ExecuteAsync(CancellationToken stoppingToken)
         {
-
-            Parallel.For(0, _consumerConfig.ConsumerCount,
-                async (index) => await Consume(index, stoppingToken));
-
+            Task.Run(() => Consume(stoppingToken));
             return Task.CompletedTask;
         }
 
-        private async Task Consume(int consumerIndex, CancellationToken stoppingToken)
+        private async Task Consume(CancellationToken stoppingToken)
         {
-            using var lifeTimeScope = _lifetimeScope.BeginLifetimeScope();
-            var dataProducer = lifeTimeScope.Resolve<IDataProducer>();
-
-            while (!stoppingToken.IsCancellationRequested)
-            {
-                try
-                {
-                    var consumedValue = dataProducer.Produce();
-
-                    if (consumedValue == null)
-                    {
-                        this.Dispose();
-                    }
-                    else
-                    {
-                        Console.WriteLine($"Consumer #{consumerIndex} consumed the value: {consumedValue.Data}.");
-                        Task.Delay(100).Wait();
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
-            }
-            Console.WriteLine($"Consumer #{consumerIndex} stopped its execution due to a cancellation request.");
-
+            var message = new MessageModel() {Id = 1, Data = 1};//_dataProducer.Produce();
+            _messageRepo.Save(message);
         }
     }
 }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\PP\\PP1.ServiceLayer\\PP1.ServiceLayer\\PP1.ServiceLayer.csproj": {}
+    "E:\\PP\\PP2\\PP1.ServiceLayer\\PP1.ServiceLayer.csproj": {}
   },
   "projects": {
-    "E:\\PP\\PP1.ServiceLayer\\PP1.ServiceLayer\\PP1.ServiceLayer.csproj": {
+    "E:\\PP\\PP2\\PP1.ServiceLayer\\PP1.ServiceLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\PP\\PP1.ServiceLayer\\PP1.ServiceLayer\\PP1.ServiceLayer.csproj",
+        "projectUniqueName": "E:\\PP\\PP2\\PP1.ServiceLayer\\PP1.ServiceLayer.csproj",
         "projectName": "PP1.ServiceLayer",
-        "projectPath": "E:\\PP\\PP1.ServiceLayer\\PP1.ServiceLayer\\PP1.ServiceLayer.csproj",
+        "projectPath": "E:\\PP\\PP2\\PP1.ServiceLayer\\PP1.ServiceLayer.csproj",
         "packagesPath": "C:\\Users\\Vadym\\.nuget\\packages\\",
-        "outputPath": "E:\\PP\\PP1.ServiceLayer\\PP1.ServiceLayer\\obj\\",
+        "outputPath": "E:\\PP\\PP2\\PP1.ServiceLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Vadym\\AppData\\Roaming\\NuGet\\NuGet.Config",
